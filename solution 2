@@ -1,0 +1,24 @@
+def is_sator_square(grid):
+    n = len(grid)
+    for i in range(n):
+        for j in range(n):
+            if grid[i][j] != grid[j][i] or grid[i][j] != grid[n-1-i][n-1-j]:
+                return False
+    return True
+
+def main():
+    n = int(input("Enter the size of the grid: "))
+    grid = []
+    
+    print("Enter the grid values :")
+    for i in range(n):
+        row = input().strip().split()
+        grid.append(row)
+    
+    if is_sator_square(grid):
+        print("True")
+    else:
+        print("False")
+
+if __name__ == "__main__":
+    main()
